@@ -301,14 +301,16 @@
 
     <script>
         window.addEventListener('load', () => {
-            const loader = document.getElementById('loader');
-            if (loader) {
-                loader.classList.add('fade-out');
-                document.body.classList.remove('loading');
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 500);
-            }
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                if (loader) {
+                    loader.classList.add('fade-out');
+                    document.body.classList.remove('loading');
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }
+            }, 2000);
         });
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -344,4 +346,3 @@
     </script>
 </body>
 </html>
-
