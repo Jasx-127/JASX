@@ -174,27 +174,65 @@
             text-align: center;
         }
 
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(0, 210, 255, 0.1);
-            border-top: 3px solid var(--primary-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        /* Replacing spinner with a simple planet/orbit animation */
+        .planet-system {
+            width: 140px;
+            height: 140px;
+            position: relative;
             margin: 0 auto 20px;
+        }
+
+        .sun {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ffcc33, #ff8800);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px rgba(255,136,0,0.6);
+        }
+
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .orbit.o1 { width: 40px; height: 40px; animation: orbit-rotate 3.6s linear infinite; }
+        .orbit.o2 { width: 72px; height: 72px; animation: orbit-rotate 5.2s linear infinite reverse; }
+        .orbit.o3 { width: 106px; height: 106px; animation: orbit-rotate 8s linear infinite; }
+
+        .orbit .planet {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(0,0,0,0.4);
+        }
+
+        .orbit.o1 .planet { background: #00d2ff; width: 8px; height: 8px; box-shadow: 0 0 6px rgba(0,210,255,0.8); }
+        .orbit.o2 .planet { background: #8a2be2; width: 10px; height: 10px; box-shadow: 0 0 8px rgba(138,43,226,0.6); }
+        .orbit.o3 .planet { background: #ff6b6b; width: 12px; height: 12px; box-shadow: 0 0 9px rgba(255,107,107,0.6); }
+
+        @keyframes orbit-rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to   { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
         .loader-text {
             color: var(--primary-color);
             letter-spacing: 4px;
             font-weight: bold;
-            text-transform: uppercase;
+            text-transform: capitalize;
             animation: pulse 1.5s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
 
         @keyframes pulse {
@@ -212,8 +250,13 @@
 
     <div id="loader">
         <div class="loader-content">
-            <div class="spinner"></div>
-            <div class="loader-text">Initializing JASX</div>
+            <div class="planet-system" aria-hidden="true">
+                <div class="sun" role="presentation"></div>
+                <div class="orbit o1"><div class="planet"></div></div>
+                <div class="orbit o2"><div class="planet"></div></div>
+                <div class="orbit o3"><div class="planet"></div></div>
+            </div>
+            <div class="loader-text">Planets revolving</div>
         </div>
     </div>
 
@@ -238,7 +281,7 @@
     <section id="about" class="reveal-on-scroll">
         <h2>Executive Summary</h2>
         <div class="card">
-            <p>Our project, JASX, is inspired by the ambition of SpaceX to revolutionize space technology. Our mission is to provide an international standard space tourism experience. Located in Middle Earth Orbit (MEO), the JASX hotel accommodates 3,000 guests with a total operational population of 4,000. We ensure every traveler, regardless of background, can experience the wonders of space under our professional guidelines.</p>
+            <p>Our project, JASX, is inspired by the ambition of SpaceX to revolutionize space technology. Our mission is to provide an international standard space tourism experience. Located in[...]
         </div>
     </section>
 
