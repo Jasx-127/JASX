@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JASX | Journey Across Space eXploration</title>
+    <style>
+        :root {
+            --primary-color: #00d2ff;
+            --secondary-color: #3a7bd5;
+            --accent-color: #ff0055;
+            --bg-dark: #0b0d17;
+            --text-light: #f0f0f0;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: #000;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(11, 13, 23, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary-color); }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at center, rgba(0, 210, 255, 0.1) 0%, transparent 70%);
+        }
+
+        h1 { font-size: 4rem; margin-bottom: 20px; color: var(--primary-color); }
+        
+        .cta-button {
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        section { padding: 80px 50px; max-width: 1200px; margin: 0 auto; }
+        h2 { font-size: 2.5rem; margin-bottom: 40px; text-align: center; color: var(--primary-color); }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+
+        .room-tag {
+            display: inline-block;
+            background: var(--secondary-color);
+            padding: 2px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        footer { background: #050508; padding: 40px; text-align: center; border-top: 1px solid #333; }
+    </style>
+</head>
+<body>
+
+    <div class="stars"></div>
+
+    <nav>
+        <div class="logo">JASX</div>
+        <ul class="nav-links">
+            <li><a href="#about">Mission</a></li>
+            <li><a href="#hotels">Tiers</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#team">Team</a></li>
+        </ul>
+        <a href="#about" class="cta-button">About Us</a>
+    </nav>
+
+    <header>
+        <h1>Journey Across Space eXploration</h1>
+        <p>Redefining luxury tourism for the new space age.</p>
+    </header>
+
+    <section id="about">
+        <h2>Executive Summary</h2>
+        <div class="card">
+            <p>Our project, JASX, is inspired by the ambition of SpaceX to revolutionize space technology. Our mission is to provide an international standard space tourism experience. Located in Middle Earth Orbit (MEO), the JASX hotel accommodates 3,000 guests with a total operational population of 4,000. We ensure every traveler, regardless of background, can experience the wonders of space under our professional guidelines.</p>
+        </div>
+    </section>
+
+    <section id="hotels">
+        <h2>Our Hotel Experience</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Galaxy Grill</h3>
+                <p>Designed for affordability. Our budget-friendly tier ensures space travel is accessible to everyone.</p>
+            </div>
+            <div class="card">
+                <h3>Orbit Haven</h3>
+                <p>The middle-tier experience. Superior comfort with a perfect balance of luxury and technology.</p>
+            </div>
+            <div class="card">
+                <h3>Nebula Royale</h3>
+                <p>Ultra-luxury. Exclusive dining, premium suites, and 24/7 VIP service for the ultimate vacation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="rooms">
+        <h2>Accommodations</h2>
+        <div class="grid-container">
+            <div class="card">
+                <span class="room-tag">Standard</span>
+                <h3>Capsule Room</h3>
+                <p>Compact and efficient. Features a foldable bed, smart storage, and shared facilities. Ideal for short stays.</p>
+            </div>
+            <div class="card">
+                <span class="room-tag">Standard Plus</span>
+                <h3>Small Suite</h3>
+                <p>Perfect for small families. Includes a private bathroom, double bed, and a dedicated workspace.</p>
+            </div>
+            <div class="card">
+                <span class="room-tag">Premium</span>
+                <h3>Large Suite</h3>
+                <p>Spacious living for groups or families. Features enhanced Earth-view windows, multiple sleeping areas, and private lounge space.</p>
+            </div>
+            <div class="card">
+                <span class="room-tag">VIP</span>
+                <h3>Presidential Suite</h3>
+                <p>The pinnacle of space living. Features double king-sized beds, kitchen, dining area, and 360-degree panoramic views.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <h2>Team & Acknowledgement</h2>
+        <div class="card">
+            <p><strong>NSS Team JAS-X:</strong> D Jatin Sai (Leader), S Jaiakash (Assistant Leader), Sharan Raj, Krish Raghav, Sreejeeth V, Lohith Gosu.</p>
+            <hr style="margin: 20px 0; opacity: 0.2;">
+            <p>A heartfelt thanks to respected A.D. Ma'am, our Principal Sir, and our NSS In-charges Sheeba Ma'am and Pavani Ma'am. </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 JASX - Narayana e-techno School, CHE-KLT</p>
+    </footer>
+
+</body>
+</html>
+
